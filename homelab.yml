@@ -12,4 +12,4 @@
     # - router
     # - clash-redir
     # - dnsmasq
-    # - netdata
+    - netdata

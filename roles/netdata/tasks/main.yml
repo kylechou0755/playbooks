@@ -1,12 +1,12 @@
 ---
-- name: add apt repository key
-  apt_key:
-    url: 'https://packagecloud.io/netdata/netdata/gpgkey'
+# - name: add apt repository key
+#   apt_key:
+#     url: 'https://packagecloud.io/netdata/netdata/gpgkey'
 
-- name: add apt repository
-  apt_repository:
-    repo: 'deb https://packagecloud.io/netdata/netdata/ubuntu/ {{ ansible_lsb.codename | lower }} main'
-    update_cache: yes
+# - name: add apt repository
+#   apt_repository:
+#     repo: 'deb https://packagecloud.io/netdata/netdata/ubuntu/ {{ ansible_lsb.codename | lower }} main'
+#     update_cache: yes
 
 - name: install apt packages
   apt:
