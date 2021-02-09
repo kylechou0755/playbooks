@@ -13,3 +13,4 @@
     # - clash-redir
     # - dnsmasq
     - netdata
+    - docker
