@@ -21,3 +21,7 @@ Host jp-agent
 Host voyager
   HostName 10.0.0.1
   User root
+
+Host X470
+  HostName X470
+  User root

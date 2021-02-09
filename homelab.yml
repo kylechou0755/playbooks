@@ -1,13 +1,15 @@
-- hosts: voyager
+- hosts: X470
+  # become: yes
+  # become_user: kchou
   vars:
     nextdata_exposed: true
-  vars_files:
-    - secrets.yml
-    - voyager-secrets.yml
+  # vars_files:
+  #   - secrets.yml
+  #   - voyager-secrets.yml
   roles:
     - common
-    - pppoe
-    - router
-    - clash-redir
-    - dnsmasq
-    - netdata
+    # - pppoe
+    # - router
+    # - clash-redir
+    # - dnsmasq
+    # - netdata
