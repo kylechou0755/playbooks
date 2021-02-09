@@ -6,7 +6,7 @@ voyager
 
 # Example of setting a group of hosts to use Python3
 [py3-hosts]
-X470
+nas
 
 [py3-hosts:vars]
 ansible_python_interpreter=/usr/bin/python3

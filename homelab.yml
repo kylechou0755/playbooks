@@ -1,4 +1,4 @@
-- hosts: X470
+- hosts: nas
   # become: yes
   # become_user: kchou
   vars:
