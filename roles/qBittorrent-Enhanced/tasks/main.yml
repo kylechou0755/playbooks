@@ -1,0 +1,22 @@
+---
+- name: create qbittorrent compose dir
+  file:
+    path: /root/qbittorrent
+    state: directory
+
+- name: upload compose file
+  template:
+    src: 'docker-compose.yml'
+    dest: '/root/qbittorrent/docker-compose.yml'
+
+- name: upload app image files
+  copy:
+    src: '{{ role_path }}/files/{{ item }}'
+    dest: '/root/qbittorrent'
+  loop:
+    - app
+
+- name: Start qbittorrent
+  command:
+    cmd: docker-compose up -d
+    chdir: /root/qbittorrent
