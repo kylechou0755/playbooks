@@ -1,0 +1,3 @@
+---
+qbittorrent_config: '/root/docker-qbittorrent/config'
+qbittorrent_downloads: '/data/nextcloud/data/admin/files/Downloads'

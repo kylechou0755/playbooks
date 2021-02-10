@@ -1,0 +1,20 @@
+# Modify from https://github.com/SuperNG6/Docker-qBittorrent-Enhanced-Edition/blob/master/docker-compose.yml
+
+version: '3'
+
+services:
+  qbittorrent:
+    image: ghcr.io/linuxserver/qbittorrent
+    environment:
+      - PUID=1000
+      - PGID=1000
+      - TZ=Asia/Shanghai
+      - WEBUI_PORT=18081
+    volumes:
+      - {{ qbittorrent_config }}:/config
+      - {{ qbittorrent_downloads }}:/downloads
+    ports:
+      - 16882:16882
+      - 16882:16882/udp
+      - 18081:18081
+    restart: unless-stopped

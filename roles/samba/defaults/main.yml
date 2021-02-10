@@ -1,53 +1,17 @@
 ---
-samba_hostname: Infinity
-samba_root: /storage
-samba_home_root: /storage/private/homes
-samba_backup_root: /storage/backups
-samba_timemachine_root: /storage/backups/timemachines
+samba_hostname: nas
+samba_root: /data
+samba_home_root: /data/private/homes
 samba_users:
-  - name: jysperm
-    time_machine_quota: 512GB
+  - name: kchou
 smb_conf: |
   [Home]
-    path = /storage/private/homes/%U
+    path = /data/private/homes/kchou
     writeable = yes
-    valid users = jysperm
+    valid users = kchou
 
   [NextCloud]
-    path = /storage/nextcloud/data/%U/files
+    path = /data/nextcloud/data/admin/files
     writeable = yes
-    valid users = @staff
+    valid users = kchou
     force user = www-data
-
-  [TimeMachine]
-    path = /storage/backups/timemachines/%U
-    writable = yes
-    valid users = @staff
-
-    durable handles = yes
-    kernel oplocks = no
-    kernel share modes = no
-    posix locking = no
-    vfs objects = catia fruit streams_xattr
-    ea support = yes
-    inherit acls = yes
-    fruit:time machine = yes
-
-  [Backup]
-    path = /storage/backups/%U
-    writeable = yes
-    valid users = jysperm
-
-  [VideoWorks]
-    path = /storage/shares/VideoWorks
-    writeable = yes
-    valid users = @staff
-    force group = staff
-    create mask = 0775
-
-  [Resources]
-    path = /storage/public/Resources
-    guest ok = yes
-    write list = @staff
-    force group = +staff
-    create mask = 0775

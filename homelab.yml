@@ -8,13 +8,11 @@
   #   - voyager-secrets.yml
   roles:
     # - common
-    # - pppoe
-    # - router
-    # - clash-redir
-    # - dnsmasq
     # - netdata
     # - docker
     # - nextcloud
     # - nginx
     # - cloudflare-ddns
-    - qBittorrent-Enhanced
+    # - qBittorrent-Enhanced
+    # - docker-qbittorrent
+    - samba

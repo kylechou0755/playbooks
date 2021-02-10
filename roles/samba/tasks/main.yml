@@ -3,7 +3,7 @@
     name: '{{ item }}'
   loop:
     - samba
-    - avahi-daemon
+    # - avahi-daemon
 
 - name: create group
   group:
@@ -26,29 +26,29 @@
     group: '{{ item.name }}'
   loop: '{{ samba_users }}'
 
-- name: create Backup dir
-  file:
-    path: '{{ samba_backup_root }}/{{ item.name }}'
-    state: directory
-    owner: '{{ item.name }}'
-    group: '{{ item.name }}'
-  loop: '{{ samba_users }}'
+# - name: create Backup dir
+#   file:
+#     path: '{{ samba_backup_root }}/{{ item.name }}'
+#     state: directory
+#     owner: '{{ item.name }}'
+#     group: '{{ item.name }}'
+#   loop: '{{ samba_users }}'
 
-- name: create TimeMachine dir
-  file:
-    path: '{{ samba_timemachine_root }}/{{ item.name }}'
-    state: directory
-    owner: '{{item.name}}'
-    group: '{{item.name}}'
-  loop: '{{ samba_users }}'
-  when: 'item.time_machine_quota | default(false)'
+# - name: create TimeMachine dir
+#   file:
+#     path: '{{ samba_timemachine_root }}/{{ item.name }}'
+#     state: directory
+#     owner: '{{item.name}}'
+#     group: '{{item.name}}'
+#   loop: '{{ samba_users }}'
+#   when: 'item.time_machine_quota | default(false)'
 
-- name: setup TimeMachine quota
-  template:
-    src: com.apple.TimeMachine.quota.plist
-    dest: '{{ samba_timemachine_root }}/{{ item.name }}/.com.apple.TimeMachine.quota.plist'
-  loop: '{{ samba_users }}'
-  when: 'item.time_machine_quota'
+# - name: setup TimeMachine quota
+#   template:
+#     src: com.apple.TimeMachine.quota.plist
+#     dest: '{{ samba_timemachine_root }}/{{ item.name }}/.com.apple.TimeMachine.quota.plist'
+#   loop: '{{ samba_users }}'
+#   when: 'item.time_machine_quota'
 
 - name: install samba configure
   template:
@@ -56,8 +56,8 @@
     dest: /etc/samba/smb.conf
   notify: restart samba
 
-- name: install avahi configure
-  template:
-    src: avahi.service
-    dest: /etc/avahi/services/timemachine.service
-  notify: restart avahi
+# - name: install avahi configure
+#   template:
+#     src: avahi.service
+#     dest: /etc/avahi/services/timemachine.service
+#   notify: restart avahi
