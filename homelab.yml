@@ -7,11 +7,12 @@
   #   - secrets.yml
   #   - voyager-secrets.yml
   roles:
-    - common
+    # - common
     # - pppoe
     # - router
     # - clash-redir
     # - dnsmasq
-    - netdata
-    - docker
-    - nextcloud
+    # - netdata
+    # - docker
+    # - nextcloud
+    - nginx

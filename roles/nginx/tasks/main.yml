@@ -4,7 +4,7 @@
     name: '{{item}}'
   loop:
     - nginx
-    - python-pip
+    - python3-pip
 
 - name: install ngxtop
   pip:
