@@ -1,0 +1,15 @@
+---
+- name: create cloudflare-ddns compose dir
+  file:
+    path: /root/cloudflare-ddns
+    state: directory
+
+- name: upload compose file
+  template:
+    src: 'docker-compose.yml'
+    dest: '/root/cloudflare-ddns/docker-compose.yml'
+
+- name: Start cloudflare-ddns
+  command:
+    cmd: docker-compose up -d
+    chdir: /root/cloudflare-ddns

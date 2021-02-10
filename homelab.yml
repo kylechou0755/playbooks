@@ -15,4 +15,5 @@
     # - netdata
     # - docker
     # - nextcloud
-    - nginx
+    # - nginx
+    - cloudflare-ddns

@@ -1,0 +1,12 @@
+# Modify from https://github.com/oznu/docker-cloudflare-ddns
+
+version: '3'
+services:
+  cloudflare-ddns:
+    image: oznu/cloudflare-ddns:latest
+    restart: always
+    environment:
+      - API_KEY=xxxxxxxx
+      - ZONE=cloud.devopsthink.org
+      - SUBDOMAIN=subdomain
+      - PROXIED=false
