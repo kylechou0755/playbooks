@@ -14,3 +14,4 @@
     # - dnsmasq
     - netdata
     - docker
+    - nextcloud

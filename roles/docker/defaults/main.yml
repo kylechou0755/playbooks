@@ -3,3 +3,5 @@
 docker_install_compose: true
 docker_compose_version: "1.26.0"
 docker_compose_path: /usr/local/bin/docker-compose
+docker_mirror_url: 'https://mirrors.tuna.tsinghua.edu.cn/docker-ce/linux/ubuntu'
+docker_registry_url: 'https://docker.mirrors.ustc.edu.cn/'

@@ -1,9 +1,4 @@
 ---
-- name: add apt repository
-  apt_repository:
-    repo: 'ppa:nginx/stable'
-    update_cache: yes
-
 - name: install apt packages
   apt:
     name: '{{item}}'
@@ -14,7 +9,7 @@
 - name: install ngxtop
   pip:
     name: ngxtop
-    extra_args: '{{ pip_args | default(omit) }}'
+    # extra_args: '{{ pip_args | default(omit) }}'
 
 - name: create home dir
   user:
