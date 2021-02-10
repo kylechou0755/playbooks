@@ -9,5 +9,5 @@ services:
       - EMAIL=bernylinville@devopsthink.org
       - API_KEY=xxxxxxxx
       - ZONE=devopsthink.org
-      - SUBDOMAIN=cloud.devopsthink.org
+      - SUBDOMAIN=cloud
       - PROXIED=false
