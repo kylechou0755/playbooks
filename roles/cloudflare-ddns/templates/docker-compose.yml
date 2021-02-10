@@ -6,7 +6,8 @@ services:
     image: oznu/cloudflare-ddns:latest
     restart: always
     environment:
+      - EMAIL=bernylinville@devopsthink.org
       - API_KEY=xxxxxxxx
-      - ZONE=cloud.devopsthink.org
-      - SUBDOMAIN=subdomain
+      - ZONE=devopsthink.org
+      - SUBDOMAIN=cloud.devopsthink.org
       - PROXIED=false
