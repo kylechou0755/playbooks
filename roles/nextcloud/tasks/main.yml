@@ -17,6 +17,11 @@
     - web
     - app
 
+- name: Update nextcloud
+  command:
+    cmd: docker-compose build --pull
+    chdir: /root/nextcloud
+
 - name: Start nextcloud
   command:
     cmd: docker-compose up -d
