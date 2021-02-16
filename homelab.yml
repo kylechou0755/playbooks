@@ -16,4 +16,5 @@
     # - qBittorrent-Enhanced
     # - docker-qbittorrent
     # - samba
-    - wireguard
+    # - wireguard
+    - aria2

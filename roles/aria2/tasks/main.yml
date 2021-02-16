@@ -1,28 +1,15 @@
 ---
-- name: create nextcloud compose dir
+- name: create aria2 compose dir
   file:
-    path: /root/nextcloud
+    path: /data/docker/aria2
     state: directory
 
 - name: upload compose file
   template:
     src: 'docker-compose.yml'
-    dest: '/root/nextcloud/docker-compose.yml'
+    dest: '/data/docker/aria2/docker-compose.yml'
 
-- name: upload web image files
-  copy:
-    src: '{{ role_path }}/files/{{ item }}'
-    dest: '/root/nextcloud'
-  loop:
-    - web
-    - app
-
-- name: Update nextcloud
-  command:
-    cmd: docker-compose build --pull
-    chdir: /root/nextcloud
-
-- name: Start nextcloud
+- name: Start aria2
   command:
     cmd: docker-compose up -d
-    chdir: /root/nextcloud
+    chdir: /data/docker/aria2
