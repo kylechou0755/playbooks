@@ -13,4 +13,4 @@ services:
     environment:
       ROCKET_PORT: 10001
       SIGNUPS_ALLOWED: 'true'   # set to false to disable signups
-      DOMAIN: "http://cloud.devopsthink.org:20001/bitwarden"
+      DOMAIN: "https://bitwarden.example.com/base-dir"
