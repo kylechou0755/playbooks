@@ -17,4 +17,5 @@
     # - docker-qbittorrent
     # - samba
     # - wireguard
-    - aria2
+    # - aria2
+    - bitwarden

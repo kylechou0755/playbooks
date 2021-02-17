@@ -1,0 +1,16 @@
+# Modify from https://github.com/dani-garcia/bitwarden_rs/wiki/Using-Docker-Compose
+
+version: '3'
+
+services:
+  bitwarden:
+    image: bitwardenrs/server
+    restart: always
+    ports:
+      - 10001:10001
+    volumes:
+      - '{{ bitwarden_data }}:/data'
+    environment:
+      ROCKET_PORT: 10001
+      SIGNUPS_ALLOWED: 'true'   # set to false to disable signups
+      DOMAIN: "http://cloud.devopsthink.org:20001/bitwarden"
