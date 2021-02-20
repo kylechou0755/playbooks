@@ -1,0 +1,33 @@
+# Modify from https://github.com/FreshRSS/FreshRSS/blob/master/Docker/docker-compose.yml
+
+
+version: "3"
+
+services:
+  freshrss-db:
+    image: postgres:12-alpine
+    container_name: freshrss-db
+    hostname: freshrss-db
+    restart: unless-stopped
+    volumes:
+      - '{{ postgresql_data }}:/var/lib/postgresql/data'
+    environment:
+      POSTGRES_USER: freshrss
+      POSTGRES_PASSWORD: freshrss
+      POSTGRES_DB: freshrss
+
+  freshrss-app:
+    image: freshrss/freshrss:latest
+    container_name: freshrss-app
+    hostname: freshrss-app
+    restart: unless-stopped
+    ports:
+      - "10002:80"
+    depends_on:
+      - freshrss-db
+    volumes:
+      - '{{ freshrss_data }}:/var/www/FreshRSS/data'
+      - '{{ freshrss_extensions }}:/var/www/FreshRSS/extensions'
+    environment:
+      CRON_MIN: '*/20'
+      TZ: Asia/Shanghai

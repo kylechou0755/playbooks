@@ -1,0 +1,20 @@
+---
+- name: create freshrss compose dir
+  file:
+    path: /data/docker/freshrss
+    state: directory
+
+- name: upload compose file
+  template:
+    src: 'docker-compose.yml'
+    dest: '/data/docker/freshrss/docker-compose.yml'
+
+- name: Update freshrss
+  command:
+    cmd: docker-compose pull
+    chdir: /data/docker/freshrss
+
+- name: Start freshrss
+  command:
+    cmd: docker-compose up -d
+    chdir: /data/docker/freshrss

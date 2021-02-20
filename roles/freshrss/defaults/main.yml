@@ -1,0 +1,4 @@
+---
+freshrss_data: '/data/docker/freshrss/data'
+freshrss_extensions: '/data/docker/freshrss/extensions'
+postgresql_data: '/data/db/freshrss'
