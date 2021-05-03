@@ -1,15 +1,15 @@
 ---
 - name: create cloudflare-ddns compose dir
   file:
-    path: /root/cloudflare-ddns
+    path: "{{ cloudflare_ddns_path }}"
     state: directory
 
 - name: upload compose file
   template:
     src: 'docker-compose.yml'
-    dest: '/root/cloudflare-ddns/docker-compose.yml'
+    dest: "{{ cloudflare_ddns_docker_compose_file_path }}"
 
 - name: Start cloudflare-ddns
   command:
     cmd: docker-compose up -d
-    chdir: /root/cloudflare-ddns
+    chdir: "{{ cloudflare_ddns_path }}"

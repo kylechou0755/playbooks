@@ -1,6 +1,6 @@
-# Modify from https://github.com/oznu/docker-cloudflare-ddns
+# Modify from https://github.com/oznu/docker-cloudflare-ddns#docker-compose
 
-version: '3'
+version: '2'
 services:
   cloudflare-ddns:
     image: oznu/cloudflare-ddns:latest
