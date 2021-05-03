@@ -12,10 +12,10 @@
     # - docker
     # - nextcloud
     # - nginx
-    - cloudflare-ddns
+    # - cloudflare-ddns
     # - qBittorrent-Enhanced
     # - docker-qbittorrent
     # - samba
     # - wireguard
     # - aria2
-    # - bitwarden
+    - bitwarden

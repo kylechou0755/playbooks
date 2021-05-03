@@ -4,13 +4,11 @@ version: '3'
 
 services:
   bitwarden:
-    image: bitwardenrs/server
+    image: vaultwarden/server:latest
     restart: always
     ports:
-      - 10001:10001
+      - 10001:80
     volumes:
       - '{{ bitwarden_data }}:/data'
     environment:
-      ROCKET_PORT: 10001
       SIGNUPS_ALLOWED: 'true'   # set to false to disable signups
-      DOMAIN: "https://bitwarden.example.com/base-dir"

@@ -1,2 +1,4 @@
 ---
-bitwarden_data: '/data/docker/bitwarden/data'
+bitwarden_data: '/data/bitwarden/data'
+bitwarden_dir: '/data/bitwarden'
+bitwarden_docker_compose: '/data/bitwarden/docker-compose.yml'
