@@ -1,12 +1,53 @@
-cn-forum
-ap-forum
-ap-home
-jp-agent
-voyager
+# This is the default ansible 'hosts' file.
+#
+# It should live in /etc/ansible/hosts
+#
+#   - Comments begin with the '#' character
+#   - Blank lines are ignored
+#   - Groups of hosts are delimited by [header] elements
+#   - You can enter hostnames or ip addresses
+#   - A hostname/ip can be a member of multiple groups
 
-# Example of setting a group of hosts to use Python3
-[py3-hosts]
-nas
+# Ex 1: Ungrouped hosts, specify before any group headers.
 
-[py3-hosts:vars]
-ansible_python_interpreter=/usr/bin/python3
+#green.example.com
+#blue.example.com
+#192.168.100.1
+#192.168.100.10
+
+# Ex 2: A collection of hosts belonging to the 'webservers' group
+
+#[webservers]
+#alpha.example.org
+#beta.example.org
+#192.168.1.100
+#192.168.1.110
+
+# If you have multiple hosts following a pattern you can specify
+# them like this:
+
+#www[001:006].example.com
+
+# Ex 3: A collection of database servers in the 'dbservers' group
+
+#[dbservers]
+#
+#db01.intranet.mydomain.net
+#db02.intranet.mydomain.net
+#10.25.1.56
+#10.25.1.57
+
+# Here's another example of host ranges, this time there are no
+# leading 0s:
+
+#db-[99:101]-node.example.com
+
+; 将所有节点的信息在这里填写
+;    第一个字段                  为节点主机名，注意必须由小写字母、数字，“-”或“.”组成，并且必须以小写字母或数字开头和结尾
+;    第二个字段 ansible_host     为节点内网IP
+;    第三个字段 ansible_port     为节点 sshd 监听端口
+;    第四个字段 ansible_user     为节点远程登录用户名
+;    第五个字段 ansible_ssh_pass 为节点远程登录用户密码
+
+[all]
+server1 ansible_host=192.168.56.11 ansible_port=22 ansible_user="vagrant" ansible_ssh_private_key_file=".vagrant/machines/server1/virtualbox/private_key"
