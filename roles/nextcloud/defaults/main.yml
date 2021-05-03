@@ -1,5 +1,7 @@
 ---
+nextcloud_dir: '/data/nextcloud'
+nextcloud_docker_compose: '/data/nextcloud/docker-compose.yml'
 nextcloud_root: '/data/nextcloud/nextcloud'
 nextcloud_db: '/data/nextcloud/db'
-mysql_root_password: 'password'
-nextcloud_mysql_password: 'password'
+mysql_root_password: 'mysql'
+nextcloud_mysql_password: 'nextcloud'

@@ -1,15 +1,15 @@
 - hosts: nas
-  # become: yes
-  become_user: kchou
-  vars:
-    nextdata_exposed: true
+  become: true
+  # become_user: root
+  # vars:
+  #   nextdata_exposed: true
   # vars_files:
   #   - secrets.yml
   #   - voyager-secrets.yml
   roles:
-    - common
+    # - common
     # - netdata
-    - docker
+    # - docker
     # - nextcloud
     # - nginx
     - cloudflare-ddns

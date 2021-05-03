@@ -6,8 +6,8 @@ services:
     image: oznu/cloudflare-ddns:latest
     restart: always
     environment:
-      - EMAIL=bernylinville@devopsthink.org
-      - API_KEY=xxxxxxxx
+      - EMAIL={{ cloudflare_email }}
+      - API_KEY={{ cloudflare_api_key }}
       - ZONE=devopsthink.org
       - SUBDOMAIN=home
       - PROXIED=false
