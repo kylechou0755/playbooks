@@ -4,14 +4,14 @@
     name: '{{item}}'
   loop:
     - nginx
-    - python3-pip
+    # - python3-pip
 
-- name: install ngxtop
-  pip:
-    name: ngxtop
+# - name: install ngxtop
+#   pip:
+#     name: ngxtop
     # extra_args: '{{ pip_args | default(omit) }}'
 
-- name: create home dir
+- name: create nginx user home dir
   user:
     name: 'www-data'
     shell: /bin/bash
@@ -33,11 +33,11 @@
 - name: delete nginx built-in default site
   file: path=/etc/nginx/sites-enabled/default state=absent
 
-- name: upload nginx default site
-  template: src=default.conf dest=/etc/nginx/sites-enabled/default.conf
+# - name: upload nginx default site
+#   template: src=default.conf dest=/etc/nginx/sites-enabled/default.conf
 
-- name: upload nginx resource file
-  copy: src={{role_path}}/files/holding dest=/var/www
+# - name: upload nginx resource file
+#   copy: src={{role_path}}/files/holding dest=/var/www
 
 - name: upload nginx site config
   template: src={{ item }} dest=/etc/nginx/sites-enabled/{{ item | basename }}

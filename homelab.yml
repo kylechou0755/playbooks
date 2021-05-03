@@ -12,7 +12,7 @@
     - docker
     # - nextcloud
     # - nginx
-    # - cloudflare-ddns
+    - cloudflare-ddns
     # - qBittorrent-Enhanced
     # - docker-qbittorrent
     # - samba
