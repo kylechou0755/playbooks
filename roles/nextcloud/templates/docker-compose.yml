@@ -1,10 +1,10 @@
-# Modify from https://github.com/nextcloud/docker/blob/65f3f6d167defbef27d01819da34314e0569040d/.examples/docker-compose/insecure/mariadb-cron-redis/fpm/docker-compose.yml
+# Modify from https://github.com/nextcloud/docker/blob/master/.examples/docker-compose/insecure/mariadb/fpm/docker-compose.yml
 
 version: '3'
 
 services:
   db:
-    image: mariadb
+    image: mariadb  
     command: --transaction-isolation=READ-COMMITTED --binlog-format=ROW
     restart: always
     volumes:
@@ -20,12 +20,13 @@ services:
     restart: always
 
   app:
-    build: ./app
+    # build: ./app
+    image: nextcloud:fpm-alpine
     restart: always
     volumes:
       - '{{ nextcloud_root }}:/var/www/html'
     environment:
-      OVERWRITEPROTOCOL: 'https'
+      # OVERWRITEPROTOCOL: 'https'
       MYSQL_ROOT_PASSWORD: '{{ nextcloud_mysql_password }}'
       MYSQL_PASSWORD: '{{ nextcloud_mysql_password }}'
       MYSQL_DATABASE: nextcloud
@@ -47,7 +48,8 @@ services:
       - app
 
   cron:
-    build: ./app
+    # build: ./app
+    image: nextcloud:fpm-alpine
     restart: always
     volumes:
       - '{{ nextcloud_root }}:/var/www/html'

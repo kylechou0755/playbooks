@@ -1,5 +1,5 @@
 ---
-nextcloud_root: '/data/nextcloud'
-nextcloud_db: '/data/db/nextcloud'
+nextcloud_root: '/data/nextcloud/nextcloud'
+nextcloud_db: '/data/nextcloud/db'
 mysql_root_password: 'password'
 nextcloud_mysql_password: 'password'
