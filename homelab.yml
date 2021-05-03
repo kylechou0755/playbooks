@@ -1,6 +1,6 @@
 - hosts: nas
   # become: yes
-  # become_user: kchou
+  become_user: kchou
   vars:
     nextdata_exposed: true
   # vars_files:
@@ -9,7 +9,7 @@
   roles:
     # - common
     # - netdata
-    # - docker
+    - docker
     # - nextcloud
     # - nginx
     # - cloudflare-ddns
@@ -18,4 +18,4 @@
     # - samba
     # - wireguard
     # - aria2
-    - bitwarden
+    # - bitwarden
