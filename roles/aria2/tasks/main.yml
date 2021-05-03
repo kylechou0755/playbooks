@@ -1,15 +1,15 @@
 ---
 - name: create aria2 compose dir
   file:
-    path: /data/docker/aria2
+    path: '{{ aria2_dir }}'
     state: directory
 
 - name: upload compose file
   template:
     src: 'docker-compose.yml'
-    dest: '/data/docker/aria2/docker-compose.yml'
+    dest: '{{ aria2_docker_compose }}'
 
 - name: Start aria2
   command:
     cmd: docker-compose up -d
-    chdir: /data/docker/aria2
+    chdir: '{{ aria2_dir }}'

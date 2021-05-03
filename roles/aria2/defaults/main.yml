@@ -1,3 +1,5 @@
 ---
-aria2_downloads: '/data/nextcloud/data/admin/files/downloads'
-aria2_config: '/data/docker/aria2'
+aria2_downloads: '/data/aria2/aria2-downloads'
+aria2_config: '/data/aria2/aria2-config'
+aria2_dir: '/data/aria2'
+aria2_docker_compose: '/data/aria2/docker-compose.yml'

@@ -10,12 +10,12 @@
     # - common
     # - netdata
     # - docker
-    - nextcloud
+    # - nextcloud
     # - nginx
     # - cloudflare-ddns
     # - qBittorrent-Enhanced
     # - docker-qbittorrent
-    # - samba
+    - samba
     # - wireguard
     # - aria2
     # - bitwarden
