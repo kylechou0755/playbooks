@@ -15,7 +15,7 @@
     # - cloudflare-ddns
     # - qBittorrent-Enhanced
     # - docker-qbittorrent
-    - samba
-    # - wireguard
+    # - samba
+    - wireguard
     # - aria2
     # - bitwarden
