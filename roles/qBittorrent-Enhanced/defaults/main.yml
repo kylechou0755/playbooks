@@ -1,3 +1,4 @@
 ---
-qbittorrent_config: '/root/qbittorrent/config'
-qbittorrent_downloads: '/data/nextcloud/data/admin/files/Downloads'
+qbittorrent_root: '/data/Compose/qBittorrent-Enhanced'
+qbittorrent_config: '/data/Compose/qBittorrent-Enhanced/config'
+qbittorrent_downloads: '/data/Compose/Downloads'

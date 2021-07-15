@@ -52,5 +52,5 @@
 [all]
 server1 ansible_host=192.168.56.11 ansible_port=22 ansible_user="vagrant" ansible_ssh_private_key_file=".vagrant/machines/server1/virtualbox/private_key"
 
-[nas]
-nas
+[debian]
+debian

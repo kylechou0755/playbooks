@@ -1,5 +1,5 @@
-- hosts: nas
-  become: true
+- hosts: debian
+  # become: true
   # become_user: root
   # vars:
   #   nextdata_exposed: true
@@ -13,9 +13,9 @@
     # - nextcloud
     # - nginx
     # - cloudflare-ddns
-    # - qBittorrent-Enhanced
+    - qBittorrent-Enhanced
     # - docker-qbittorrent
     # - samba
-    - wireguard
+    # - wireguard
     # - aria2
     # - bitwarden

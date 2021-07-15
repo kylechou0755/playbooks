@@ -6,8 +6,8 @@ services:
   app:
     build: ./app
     environment:
-      - PUID=33
-      - PGID=33
+      - PUID=1026
+      - PGID=100
       - TZ=Asia/Shanghai
     volumes:
       - {{ qbittorrent_config }}:/config
