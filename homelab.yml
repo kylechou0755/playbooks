@@ -13,9 +13,10 @@
     # - nextcloud
     # - nginx
     # - cloudflare-ddns
-    - qBittorrent-Enhanced
-    # - docker-qbittorrent
+    # - qBittorrent-Enhanced
+    - docker-qbittorrent
     # - samba
     # - wireguard
     # - aria2
     # - bitwarden
+    # - jellyfin

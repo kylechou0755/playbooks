@@ -1,0 +1,20 @@
+---
+- name: create jellyfin compose dir
+  file:
+    path: '{{ jellyfin_root }}'
+    state: directory
+
+- name: upload compose file
+  template:
+    src: 'docker-compose.yml'
+    dest: '{{ jellyfin_root }}/docker-compose.yml'
+
+- name: Update jellyfin
+  command:
+    cmd: docker-compose pull
+    chdir: '{{ jellyfin_root }}'
+
+- name: Start jellyfin
+  command:
+    cmd: docker-compose up -d
+    chdir: '{{ jellyfin_root }}'

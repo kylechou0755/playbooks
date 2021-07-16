@@ -1,0 +1,5 @@
+---
+jellyfin_root: '/data/Compose/jellyfin'
+jellyfin_config: '/data/Compose/jellyfin/config'
+jellyfin_tvshows: '/data/Downloads/tvshows'
+jellyfin_movies: '/data/Downloads/movies'

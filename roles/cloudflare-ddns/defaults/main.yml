@@ -1,5 +1,5 @@
 ---
-cloudflare_ddns_path: /data/cloudflare-ddns
-cloudflare_ddns_docker_compose_file_path: /data/cloudflare-ddns/docker-compose.yml
+cloudflare_ddns_path: /data/Compose/cloudflare-ddns
+cloudflare_ddns_docker_compose_file_path: /data/Compose/cloudflare-ddns/docker-compose.yml
 cloudflare_email: 'bernylinville@devopsthink.org'
 cloudflare_api_key: 'key'

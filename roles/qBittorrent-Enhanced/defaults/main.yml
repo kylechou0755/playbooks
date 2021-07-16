@@ -1,4 +1,4 @@
 ---
 qbittorrent_root: '/data/Compose/qBittorrent-Enhanced'
 qbittorrent_config: '/data/Compose/qBittorrent-Enhanced/config'
-qbittorrent_downloads: '/data/Compose/Downloads'
+qbittorrent_downloads: '/data/Downloads'

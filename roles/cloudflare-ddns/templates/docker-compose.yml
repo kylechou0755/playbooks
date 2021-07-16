@@ -6,6 +6,9 @@ services:
     image: oznu/cloudflare-ddns:latest
     restart: always
     environment:
+      - PUID=1000
+      - PGID=1000
+      - TZ=Asia/Shanghai
       - EMAIL={{ cloudflare_email }}
       - API_KEY={{ cloudflare_api_key }}
       - ZONE=devopsthink.org
